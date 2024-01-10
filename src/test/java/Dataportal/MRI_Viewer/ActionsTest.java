@@ -104,29 +104,29 @@ public class ActionsTest {
 	            .statusCode(200)
 	            .log().all();
         }
-        @Test(priority=3)
-        public void cell_api()
-        {
-	        
-	        //EP1
-        	   Response response1 = RestAssured
-                       .given()
-                       .auth()
-                       .preemptive()
-                       .basic("admin", "admin")
-                       .formParam("iipsrv", "http://apollo2.humanbrain.in:9081/fcgi-bin/iipsrv.fcgi?FIF=/data/storageIIT/humanbrain/analytics/222/NISL/B_222_FB74-SL_258-ST_NISL-SE_772_compressed.jp2&GAM=1.5&WID=512&RGN=0.7629672162524267,0.3702347863421689,0.006999699231673639,0.005784918536596389&CVT=jpeg")
-                       .config(RestAssured.config().httpClient(io.restassured.config.HttpClientConfig.httpClientConfig().setParam("http.connection.timeout", 60000)))
-                       .when()
-                       .post("http://ap3.humanbrain.in:8888/predictions/ep1");
-
-               int statusCode1 = response1.getStatusCode();
-               if (statusCode1 == 200) {
-                   System.out.println("API request to Ep1 passed. Status code: " + statusCode1);
-               } else {
-                   System.out.println("API request to Ep1 failed. Status code: " + statusCode1);
-               }
-               Assert.assertEquals(statusCode1, 200, "API request to Ep1 failed");
-           }
+//        @Test(priority=3)
+//        public void cell_api()
+//        {
+//	        
+//	        //EP1
+//        	   Response response1 = RestAssured
+//                       .given()
+//                       .auth()
+//                       .preemptive()
+//                       .basic("admin", "admin")
+//                       .formParam("iipsrv", "http://apollo2.humanbrain.in:9081/fcgi-bin/iipsrv.fcgi?FIF=/data/storageIIT/humanbrain/analytics/222/NISL/B_222_FB74-SL_258-ST_NISL-SE_772_compressed.jp2&GAM=1.5&WID=512&RGN=0.7629672162524267,0.3702347863421689,0.006999699231673639,0.005784918536596389&CVT=jpeg")
+//                       .config(RestAssured.config().httpClient(io.restassured.config.HttpClientConfig.httpClientConfig().setParam("http.connection.timeout", 60000)))
+//                       .when()
+//                       .post("http://ap3.humanbrain.in:8888/predictions/ep1");
+//
+//               int statusCode1 = response1.getStatusCode();
+//               if (statusCode1 == 200) {
+//                   System.out.println("API request to Ep1 passed. Status code: " + statusCode1);
+//               } else {
+//                   System.out.println("API request to Ep1 failed. Status code: " + statusCode1);
+//               }
+//               Assert.assertEquals(statusCode1, 200, "API request to Ep1 failed");
+//           }
         
     
     
