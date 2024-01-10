@@ -1,6 +1,7 @@
 package Dataportal.MRI_Viewer;
 
 import java.net.URL;
+
 import org.openqa.selenium.interactions.Actions;
 
 import static io.restassured.RestAssured.given;
@@ -26,6 +27,8 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import java.util.concurrent.TimeoutException;
+
 
 public class ActionsTest {
 
@@ -47,7 +50,7 @@ public class ActionsTest {
         driver.manage().window().maximize();
     }
         @Test(priority=2)
-        public void analytics_Cells() throws InterruptedException
+        public void analytics() throws InterruptedException
         {
         Actions actions = new Actions(driver);
         actions.sendKeys("d").perform(); // Simulate pressing lowercase 'd'
@@ -100,33 +103,39 @@ public class ActionsTest {
 	        .then()
 	            .statusCode(200)
 	            .log().all();
+        }
+        @Test(priority=3)
+        public void cell_api()
+        {
 	        
 	        //EP1
-	        
-	      	 Response response1 = RestAssured
-	               .given()
-	                   .auth()
-	                   .preemptive()
-	                   .basic("admin", "admin")
-	                   .formParam("iipsrv", "http://apollo2.humanbrain.in:9081/fcgi-bin/iipsrv.fcgi?FIF=/data/storageIIT/humanbrain/analytics/222/NISL/B_222_FB74-SL_258-ST_NISL-SE_772_compressed.jp2&GAM=1.5&WID=512&RGN=0.7629672162524267,0.3702347863421689,0.006999699231673639,0.005784918536596389&CVT=jpeg")
-	               .when()
-	                   .post("http://ap3.humanbrain.in:8888/predictions/ep1");
-	      	 int statusCode1 = response1.getStatusCode();
-	      	 if (statusCode1 == 200) {
-	               System.out.println("API request to Ep1 passed. Status code: " + statusCode1);
-	           } else {
-	               System.out.println("API request to Ep1 failed. Status code: " + statusCode1);
-	           }
-	           Assert.assertEquals(statusCode1, 200, "API request to Ep1 failed");
+        	   Response response1 = RestAssured
+                       .given()
+                       .auth()
+                       .preemptive()
+                       .basic("admin", "admin")
+                       .formParam("iipsrv", "http://apollo2.humanbrain.in:9081/fcgi-bin/iipsrv.fcgi?FIF=/data/storageIIT/humanbrain/analytics/222/NISL/B_222_FB74-SL_258-ST_NISL-SE_772_compressed.jp2&GAM=1.5&WID=512&RGN=0.7629672162524267,0.3702347863421689,0.006999699231673639,0.005784918536596389&CVT=jpeg")
+                       .config(RestAssured.config().httpClient(io.restassured.config.HttpClientConfig.httpClientConfig().setParam("http.connection.timeout", 60000)))
+                       .when()
+                       .post("http://ap3.humanbrain.in:8888/predictions/ep1");
+
+               int statusCode1 = response1.getStatusCode();
+               if (statusCode1 == 200) {
+                   System.out.println("API request to Ep1 passed. Status code: " + statusCode1);
+               } else {
+                   System.out.println("API request to Ep1 failed. Status code: " + statusCode1);
+               }
+               Assert.assertEquals(statusCode1, 200, "API request to Ep1 failed");
+           }
         
-    }
     
-    	@Test(priority=3)
+    
+    	@Test(priority=4)
         public void Brains_api()
         {
         Public_5brains();
         }
-    	@Test(priority=4)
+    	@Test(priority=5)
     	public void Maskimage_api()
     	{
         System.out.println("*");
@@ -136,7 +145,7 @@ public class ActionsTest {
         Maskimage_142();
         Maskimage_213();
     	}
-    	@Test(priority=5)
+    	@Test(priority=6)
     	public void MRI_api()
     	{
         System.out.println("*");
@@ -146,7 +155,7 @@ public class ActionsTest {
         MRIimage_142();
         MRIimage_213();
     	}
-    	@Test(priority=6)
+    	@Test(priority=7)
     	public void Public_sections_api()
     	{
         System.out.println("*");

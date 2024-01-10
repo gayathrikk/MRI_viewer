@@ -7,7 +7,7 @@
         <methods>
           <include name="afterTest"/>
           <include name="setup"/>
-          <include name="analytics_Cells"/>
+          <include name="cell_api"/>
         </methods>
       </class> <!-- Dataportal.MRI_Viewer.ActionsTest -->
     </classes>
