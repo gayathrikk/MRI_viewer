@@ -47,7 +47,7 @@ public class ActionsTest {
         driver.manage().window().maximize();
     }
         @Test(priority=2)
-        public void analytics() throws InterruptedException
+        public void analytics_Cells() throws InterruptedException
         {
         Actions actions = new Actions(driver);
         actions.sendKeys("d").perform(); // Simulate pressing lowercase 'd'
@@ -83,7 +83,7 @@ public class ActionsTest {
         } else {
             System.out.println("node is  not clickable");
         }
-        Thread.sleep(8000);
+        Thread.sleep(5000);
         
       //analytics
         
@@ -100,10 +100,6 @@ public class ActionsTest {
 	        .then()
 	            .statusCode(200)
 	            .log().all();
-        }
-        @Test(priority=3)
-        public void cell_api()
-        {
 	        
 	        //EP1
 	        
@@ -125,12 +121,12 @@ public class ActionsTest {
         
     }
     
-    	@Test(priority=4)
+    	@Test(priority=3)
         public void Brains_api()
         {
         Public_5brains();
         }
-    	@Test(priority=5)
+    	@Test(priority=4)
     	public void Maskimage_api()
     	{
         System.out.println("*");
@@ -140,7 +136,7 @@ public class ActionsTest {
         Maskimage_142();
         Maskimage_213();
     	}
-    	@Test(priority=6)
+    	@Test(priority=5)
     	public void MRI_api()
     	{
         System.out.println("*");
@@ -150,7 +146,7 @@ public class ActionsTest {
         MRIimage_142();
         MRIimage_213();
     	}
-    	@Test(priority=7)
+    	@Test(priority=6)
     	public void Public_sections_api()
     	{
         System.out.println("*");
