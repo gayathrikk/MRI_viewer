@@ -45,7 +45,10 @@ public class ActionsTest {
 
         driver.get("http://dev2sam.humanbrain.in/annotation/portal");
         driver.manage().window().maximize();
-
+    }
+        @Test(priority=2)
+        public void analytics() throws InterruptedException
+        {
         Actions actions = new Actions(driver);
         actions.sendKeys("d").perform(); // Simulate pressing lowercase 'd'
         Thread.sleep(2000);
@@ -97,6 +100,10 @@ public class ActionsTest {
 	        .then()
 	            .statusCode(200)
 	            .log().all();
+        }
+        @Test(priority=3)
+        public void cell_api()
+        {
 	        
 	        //EP1
 	        
@@ -118,22 +125,34 @@ public class ActionsTest {
         
     }
     
-    	@Test(priority=2)
-        public void Apis()
+    	@Test(priority=4)
+        public void Brains_api()
         {
         Public_5brains();
+        }
+    	@Test(priority=5)
+    	public void Maskimage_api()
+    	{
         System.out.println("*");
         Maskimage_141();
         Maskimage_222();
         Maskimage_212();
         Maskimage_142();
         Maskimage_213();
+    	}
+    	@Test(priority=6)
+    	public void MRI_api()
+    	{
         System.out.println("*");
         MRIimage_141();
         MRIimage_222();
         MRIimage_212();
         MRIimage_142();
         MRIimage_213();
+    	}
+    	@Test(priority=7)
+    	public void Public_sections_api()
+    	{
         System.out.println("*");
         public_sections_141();
         public_sections_222();

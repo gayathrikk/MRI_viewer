@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-10T12:22:28 IST" name="Default suite" finished-at="2024-01-10T12:23:11 IST" duration-ms="42716">
+  <suite started-at="2024-01-10T12:43:20 IST" name="Default suite" finished-at="2024-01-10T12:44:03 IST" duration-ms="42694">
     <groups>
     </groups>
-    <test started-at="2024-01-10T12:22:28 IST" name="Default test" finished-at="2024-01-10T12:23:11 IST" duration-ms="42716">
+    <test started-at="2024-01-10T12:43:20 IST" name="Default test" finished-at="2024-01-10T12:44:03 IST" duration-ms="42694">
       <class name="Dataportal.MRI_Viewer.ActionsTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Dataportal.MRI_Viewer.ActionsTest@611889f4]" started-at="2024-01-10T12:22:28 IST" name="setup" finished-at="2024-01-10T12:22:29 IST" duration-ms="779" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:20 IST" name="setup" finished-at="2024-01-10T12:43:21 IST" duration-ms="708" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="launch()[pri:1, instance:Dataportal.MRI_Viewer.ActionsTest@611889f4]" started-at="2024-01-10T12:22:29 IST" name="launch" finished-at="2024-01-10T12:23:03 IST" duration-ms="33894" status="PASS">
+        <test-method signature="launch()[pri:1, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:21 IST" name="launch" finished-at="2024-01-10T12:43:23 IST" duration-ms="1939" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method signature="Apis()[pri:2, instance:Dataportal.MRI_Viewer.ActionsTest@611889f4]" started-at="2024-01-10T12:23:03 IST" name="Apis" finished-at="2024-01-10T12:23:11 IST" duration-ms="7919" status="PASS">
+        <test-method signature="analytics()[pri:2, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:23 IST" name="analytics" finished-at="2024-01-10T12:43:53 IST" duration-ms="29890" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Apis -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Dataportal.MRI_Viewer.ActionsTest@611889f4]" started-at="2024-01-10T12:23:11 IST" name="afterTest" finished-at="2024-01-10T12:23:11 IST" duration-ms="103" status="PASS">
+        </test-method> <!-- analytics -->
+        <test-method signature="cell_api()[pri:3, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:53 IST" name="cell_api" finished-at="2024-01-10T12:43:55 IST" duration-ms="2064" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cell_api -->
+        <test-method signature="Brains_api()[pri:4, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:55 IST" name="Brains_api" finished-at="2024-01-10T12:43:55 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Brains_api -->
+        <test-method signature="Maskimage_api()[pri:5, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:55 IST" name="Maskimage_api" finished-at="2024-01-10T12:43:55 IST" duration-ms="146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Maskimage_api -->
+        <test-method signature="MRI_api()[pri:6, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:55 IST" name="MRI_api" finished-at="2024-01-10T12:43:55 IST" duration-ms="137" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MRI_api -->
+        <test-method signature="Public_sections_api()[pri:7, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:43:55 IST" name="Public_sections_api" finished-at="2024-01-10T12:44:03 IST" duration-ms="7473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Public_sections_api -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Dataportal.MRI_Viewer.ActionsTest@1a18644]" started-at="2024-01-10T12:44:03 IST" name="afterTest" finished-at="2024-01-10T12:44:03 IST" duration-ms="107" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
